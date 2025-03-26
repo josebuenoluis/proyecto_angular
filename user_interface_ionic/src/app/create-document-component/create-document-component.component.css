@@ -1,0 +1,17 @@
+.btn-add-row:hover{
+    opacity: .60;
+}
+
+.btn-add-row:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+
+.btn-delete-row:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+
+.btn-delete-row:hover{
+    opacity: .60;
+}

@@ -1,0 +1,47 @@
+<main class="container d-flex flex-column min-vh-100">
+    <div class="row">
+        <div class="row py-3">
+          <div class="col-12">
+            <div class="border-bottom">
+              <h1 class="text-center">Consulta de preço</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center mb-4">
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <form action="#" method="get">
+                        <div class="mb-3">
+                            <label for="ref-produto" class="form-label">Referência de produto</label>
+                            <input type="text" required class="form-control" name="refProducto" id="ref-produto" placeholder="Introduza a referência do produto">
+                            <div class="invalid-feedback">
+                              Deve inserir uma referência de artigo
+                            </div>
+                          </div>
+                        <div class="mb-3">
+                            <label for="nome-produto" class="form-label">Nome do produto</label>
+                            <input type="text" 
+                            class="form-control" 
+                            id="nome-produto"
+                            readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preço" class="form-label">Preço</label>
+                            <input type="number" 
+                            class="form-control"  
+                            id="preço"
+                            readonly
+                            min="0">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                          <button type="submit" (click)="showProduct($event)" class="btn btn-primary">Consultar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<router-outlet />

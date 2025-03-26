@@ -1,0 +1,403 @@
+<main class="container d-flex flex-column min-vh-100">
+    <div class="row">
+      <div class="row py-3">
+        <div class="col-12">
+          <div class="border-bottom">
+            <h1 class="text-center">Criar documento</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center mb-4">
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <form action="http://localhost:5281/api/SalesDocument/pruebatabla" method="post">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="border-bottom">
+                                  <h5 class="text-center">Dados do vendas</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="id-vendedor" class="form-label">Vendedor</label>
+                                <input type="text" 
+                                class="form-control" 
+                                id="id-vendedor"
+                                name="idVendedor"
+                                placeholder="Introduza o ID do vendedor"
+                                required>
+                            </div>
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="zona-fiscal" class="form-label">Zona fiscal</label>
+                                <select class="form-select" required id="zona-fiscal" name="zonaFiscal" aria-label="Zona fiscal">
+                                    <option selected>Selecione a zona fiscal</option>
+                                    <option value="cp">Continente Portugal</option>
+                                    <option value="mp">Madeira Portugal</option>
+                                    <option value="ap">Açores Portugal</option>
+                                    <option value="ip">Intracomunitário Portugal</option>
+                                    <option value="op">Outros Mercados Portugal</option>
+                                    <option value="ri">Regimen de isenção (artigo 53º do CIVA Portugal)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3 border-bottom">
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="prazo-pagamento" class="form-label">Prazo de pagamento</label>
+                                <select class="form-select" name="prazoPagamento" id="prazo-pagamento" aria-label="Prazo de pagamento">
+                                    <option selected>Selecione o prazo de pagamento</option>
+                                    <option value="0">Pronto pagamento</option>
+                                    <option value="15">Pagamento 15 dias</option>
+                                    <option value="30">Pagamento 30 dias</option>
+                                    <option value="60">Pagamento 60 dias</option>
+                                    <option value="90">Pagamento 90 dias</option>
+                                    <option value="120">Pagamento 120 dias</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="data-venc" class="form-label">Data vencimiento</label>
+                                <input type="date" 
+                                class="form-control"
+                                id="data-venc"
+                                name="dataVenc"
+                                >
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-8 mb-3">
+                                <label for="tipo-pago" class="form-label">Tipo Pagamento</label>
+                                <select class="form-select" id="tipo-pago" name="tipoPago" aria-label="Tipo Pagamento">
+                                    <option value="nenhum" selected>Nenhum</option>
+                                    <option value="numerario">Numerário</option>
+                                    <option value="cheque">Cheque Bancário</option>
+                                    <option value="visa">Visa</option>
+                                    <option value="mastercard">Mastercard</option>
+                                    <option value="multibanco">Multibanco</option>
+                                    <option value="cheque-ref">Cheque Refeição</option>
+                                    <option value="transferencia-bancaria">Transferência bancária</option>
+                                    <option value="letra-comercial">Letra comercial</option>
+                                    <option value="permuta-bens">Permuta de bens</option>
+                                    <option value="saldos-cc">Compensação de saldos em CC</option>
+                                    <option value="cheque-oferta">Cheque ou Cartão oferta</option>
+                                    <option value="conta-corriente">Conta Corrente</option>
+                                    <option value="dinheiro-electronico">Dinheiro Electrónico (Cartões de fidelidade ou pontos)</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="armazem" class="form-label">Armazem</label>
+                                <select class="form-select" name="armazem" id="armazem" aria-label="Armazem">
+                                    <option selected>Selecione um armazém</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="data-stock" class="form-label">Data Stock</label>
+                                <input type="date" 
+                                class="form-control"
+                                id="data-stock"
+                                name="dataStock"
+                                >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="border-bottom">
+                                  <h5 class="text-center">Dados do cliente</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="id-cliente" class="form-label">Referência do cliente</label>
+                                <input type="text" 
+                                class="form-control" 
+                                id="id-cliente"
+                                name="idCliente"
+                                placeholder="Introduza o ID do cliente"
+                                required>
+                            </div>
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="nome-cliente" class="form-label">Nome do cliente</label>
+                                <input type="text" 
+                                class="form-control"
+                                name="nomeCliente"
+                                id="nome-cliente"
+                                >
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-8">
+                                <label for="morada" class="form-label">Morada</label>
+                                <input type="text" 
+                                class="form-control"
+                                name="morada" 
+                                id="morada"
+                                required>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="cod-postal" class="form-label">Código postal</label>
+                                <input type="number" 
+                                class="form-control" 
+                                min="0"
+                                name="codPostal"
+                                id="cod-postal"
+                                required>
+                            </div>
+                            <div class="col-12 col-lg-5 mb-3">
+                                <label for="localidade" class="form-label">Localidade</label>
+                                <input type="text" 
+                                class="form-control"
+                                name="localidade"
+                                id="localidade"
+                                required
+                                >
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-5 mb-3">
+                                <label for="c-pais" class="form-label" required>Contribuinte</label>
+                                <select class="form-select" name="cPais" id="c-pais" aria-label="Contribuinte">
+                                    <option>PT</option>
+                                </select>
+                            </div>
+                            <div class="col-5 mb-3">
+                                <label for="id-contribuinte" class="form-label">CIF</label>
+                                <input type="text" 
+                                class="form-control"
+                                id="id-contribuinte"
+                                name="idContribuinte"
+                                required
+                                >
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-5">
+                                <label for="saldo" class="form-label">Saldo</label>
+                                <input type="number" 
+                                class="form-control"
+                                id="saldo"
+                                name="saldo"
+                                readonly
+                                >
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="border-bottom">
+                                  <h5 class="text-center">Artigos comprados</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-end">
+                                 <button type="button" class="btn border-0 btn-add-row" data-bs-toggle="modal" (click)="allProductTable()" data-bs-target="#staticBackdrop">
+                                    <i class="bi bi-plus-circle text-success fs-1"></i>
+                                 </button>
+                                 <button type="button" class="btn border-0 btn-delete-row" (click)="deleteRow()">
+                                    <i class="bi bi-dash-circle text-danger fs-1 me-5"></i>
+                                 </button>
+                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="staticBackdropLabel">Pesquisa de produtos</h5>
+                                          <button type="button" class="btn-close" (click)="clearSelectTables()" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                               <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                                <input type="text" class="form-control mb-3"
+                                                                id="ref-add-product" #searchInput
+                                                                placeholder="Introduza a referência do produto" 
+                                                                (input)="productSearch()">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div class="row mb-3">
+                                                                        <div class="col">
+                                                                            <div class="border-bottom">
+                                                                                <h5 class="text-center">Seleção de artigos</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <div class="table-responsive" style="max-height: 200px;min-height:200px; overflow-y: auto;">
+                                                                                <table class="table table-hover" #quadroProduct>
+                                                                                    <thead class="table-light" style="position:sticky; top: 0;">
+                                                                                        <tr>
+                                                                                            <th scope="col">Referência</th>
+                                                                                            <th scope="col">Descrição</th>
+                                                                                            <th scope="col">Quantia</th>
+                                                                                            <th scope="col">Preço</th>
+                                                                                            <th scope="col"></th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">REF13</th>
+                                                                                            <td>Product 1</td>
+                                                                                            <td><input type="number" value="0" min="0" class="form-control text-center"></td>
+                                                                                            <td>15.0</td>
+                                                                                            <td>
+                                                                                                <button type="button" (click)="selectProduct($event)" id="add-product-REF13" class="btn border-0 btn-add-row m-0 p-0">
+                                                                                                    <i class="bi bi-plus-circle text-success fs-3"></i>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">REF32</th>
+                                                                                            <td>Product 2</td>
+                                                                                            <td><input type="number" min="0" value="0" class="form-control text-center"></td>
+                                                                                            <td>10.0</td>
+                                                                                            <td>
+                                                                                                <button type="button" (click)="selectProduct($event)" id="add-product-REF32" class="btn border-0 btn-add-row m-0 p-0">
+                                                                                                    <i class="bi bi-plus-circle text-success fs-3"></i>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">REF43</th>
+                                                                                            <td>Product 3</td>
+                                                                                            <td><input type="number" min="0" value="0" class="form-control text-center"></td>
+                                                                                            <td>30.0</td>
+                                                                                            <td>
+                                                                                                <button type="button" (click)="selectProduct($event)" id="add-product-43" class="btn border-0 btn-add-row m-0 p-0">
+                                                                                                    <i class="bi bi-plus-circle text-success fs-3"></i>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">REF55</th>
+                                                                                            <td>Product 4</td>
+                                                                                            <td><input type="number" min="0" value="0" class="form-control text-center"></td>
+                                                                                            <td>45.0</td>
+                                                                                            <td>
+                                                                                                <button type="button" (click)="selectProduct($event)" id="add-product-55" class="btn border-0 btn-add-row m-0 p-0">
+                                                                                                    <i class="bi bi-plus-circle text-success fs-3"></i>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-3">
+                                                                        <div class="col">
+                                                                            <div class="border-bottom">
+                                                                                <h5 class="text-center">Artigos selecionados</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <div class="table-responsive" style="max-height: 200px;min-height:200px; overflow-y: auto;">
+                                                                                <table class="table table-hover" #quadroSelect>
+                                                                                    <thead class="table-light" style="position:sticky; top: 0;">
+                                                                                        <tr>
+                                                                                            <th scope="col">Referência</th>
+                                                                                            <th scope="col">Descrição</th>
+                                                                                            <th scope="col">Quantia</th>
+                                                                                            <th scope="col">Preço</th>
+                                                                                            <th scope="col">Total</th>
+                                                                                            <th scope="col"></th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        
+                                                                                    </tbody>
+                                                                                    <tfoot style="position: sticky; bottom: 0;">
+                                                                                        <tr>
+                                                                                            <td colspan="3" style="text-align: center; font-weight: bold;">
+                                                                                                Montante total
+                                                                                            </td>
+                                                                                            <td style="font-weight: bold;">
+                                                                                                0.00
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tfoot>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               </div>
+                                             </div>
+                                        <div class="modal-footer">
+                                            <button type="button" (click)="clearSelectTables()" class="btn btn-secondary" data-bs-dismiss="modal">fechar</button>
+                                            <button type="button" (click)="saveProducts()" class="btn btn-primary" data-bs-dismiss="modal">Guardar alterações</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around my-3">
+                            <div class="col-12">
+                                <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                                    <table class="table table-hover" #quadro>
+                                        <thead class="table-light" style="position:sticky; top: 0;">
+                                            <tr>
+                                                <th scope="col">Items</th>
+                                                <th scope="col">Referência</th>
+                                                <th scope="col">Descrição</th>
+                                                <th scope="col">Quantia</th>
+                                                <th scope="col">Preço</th>
+                                                <th scope="col">Desconto</th>
+                                                <th scope="col">Imposto</th>
+                                                <th scope="col">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                        <tfoot style="position: sticky; bottom: 0;">
+                                            <tr>
+                                                <td colspan="7" style="text-align: center; font-weight: bold;">
+                                                    Montante total
+                                                </td>
+                                                <td style="font-weight: bold;">
+                                                    0.00
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                  </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="alert-container mb-4"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-sm-6 d-flex justify-content-center flex-wrap">
+                                <button (click)="getData($event)" type="submit" class="btn btn-success my-2 mx-4 px-4">
+                                    Criar
+                                </button>
+                                <button type="reset" (click)="clearTable()" class="btn btn-danger my-2 mx-4">Reinício</button>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+<router-outlet />
+
+  
