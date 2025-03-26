@@ -1,0 +1,82 @@
+<main class="container d-flex flex-column min-vh-100">
+  <div class="row d-flex justify-content-center mb-4 my-5">
+    <div class="col-10 col-lg-8 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <form action="#" method="get" class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col d-flex justify-content-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-person-circle user-icon"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="fs-3 text-center fw-bolder">Login</p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-12 col-lg-8 mb-4">
+                <div class="input-group">
+                  <span class="input-group-text" id="user-icon"
+                    ><i class="bi bi-person-circle fs-4"></i
+                  ></span>
+                  <input
+                    type="text"
+                    id="username"
+                    class="form-control"
+                    aria-describedby="user-icon"
+                    placeholder="Utilizador"
+                    required
+                    #username
+                    required
+                  />
+                  <div class="invalid-feedback username">
+                    Deve digitar um nome de utilizador
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 mb-4">
+                <div class="input-group">
+                  <span class="input-group-text" id="user-password"
+                    ><i class="bi bi-lock-fill fs-4"></i></span>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    aria-describedby="user-password"
+                    placeholder="Senha"
+                    required
+                    #password
+                  />
+                  <div class="invalid-feedback password">
+                    Deve digitar uma senha
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 mb-5">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" (click)="login($event)" type="submit">Conecte-se</button>
+                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet />
+

@@ -1,0 +1,153 @@
+<main class="container d-flex flex-column min-vh-100">
+    <div class="row">
+        <div class="row py-3">
+          <div class="col-12">
+            <div class="border-bottom">
+              <h1 class="text-center">Consulta de entidade</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center mb-4">
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <form action="#" method="get">
+                        <div class="row d-flex justify-content-around border-bottom">
+                            <div class="col-12 col-lg-6 mb-4">
+                                <label for="id-entidade" class="form-label">ID da entidade</label>
+                                <input type="text" class="form-control" id="id-entidade" name="idEntidade" placeholder="Introduza o ID do entidade" required>
+                                <div class="invalid-feedback">
+                                    Deve digitar um id de entidade
+                                </div>
+                            </div>
+                            <div class="col-8 col-lg-4 mb-3 d-flex flex-column align-self-center">
+                                <button type="submit" (click)="showEntity($event)" class="btn btn-primary">Consultar</button>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center my-3">
+                            <div class="col-12 col-6 mb-3">
+                                <label for="tipo-entidade" class="form-label">Tipo do entidade</label>
+                                <input type="text" class="form-control" id="tipo-entidade" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="nome-entidade" class="form-label">Nome do entidade</label>
+                                <input type="text" 
+                                class="form-control" 
+                                id="nome-entidade"
+                                readonly>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="nome-comercial" class="form-label">Nome comercial</label>
+                                <input type="text" 
+                                class="form-control"
+                                id="nome-comercial"
+                                readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="contribuinte" class="form-label">Contribuinte</label>
+                                <input type="text" 
+                                class="form-control"
+                                id="contribuinte"
+                                readonly> 
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="contribuinte-id" class="form-label">ID Contribuinte</label>
+                                <input type="text" 
+                                class="form-control"
+                                id="contribuinte-id"
+                                readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-4 mb-3">
+                                <label for="pais-identidade" class="form-label">identificação</label>
+                                <input type="text" class="form-control" id="pais-identidade" readonly>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-3">
+                                <label for="n-identidade" class="form-label">NºIdentidade</label>
+                                <input type="text" class="form-control" id="n-identidade" readonly>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-3">
+                                <label for="data-nascimento" class="form-label">Data de nascimento</label>
+                                <input type="date" class="form-control" id="data-nascimento" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <label for="morada" class="form-label">Morada</label>
+                                <input type="text" class="form-control" id="morada" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="n-porta" class="form-label">Número da porta</label>
+                                <input type="text" class="form-control" id="n-porta" readonly>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="localidade" class="form-label">Localidade</label>
+                                <input type="text" class="form-control" id="localidade" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="postal" class="form-label">Código postal</label>
+                                <input type="number" min="0" class="form-control" id="postal" readonly>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="distrito" class="form-label">Distrito</label>
+                                <input type="text" class="form-control" id="distrito" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" readonly>
+                            </div>
+                            <div class="col-12 col-lg-6 mb-3">
+                                <label for="pais" class="form-label">País</label>
+                                <input type="text" class="form-control" id="pais" readonly>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <h4 class="text-center">Saldo</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="table-light">
+                                            <tr>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Não vencido</th>
+                                        <th scope="col">Ate 30 dias</th>
+                                        <th scope="col">31 a 60 dias</th>
+                                        <th scope="col">61 a 90 dias</th>
+                                        <th scope="col">Mais de 90 dias</th>
+                                        <th scope="col">Pontos</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Dados</th>
+                                        <td>Dados</td>
+                                        <td>Dados</td>
+                                        <td>Dados</td>
+                                        <td>Dados</td>
+                                        <td>Dados</td>
+                                        <td>Dados</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<router-outlet />
